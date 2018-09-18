@@ -3,6 +3,8 @@ Top 1 solution to the [TBrain - 客戶續約金額預測](https://tbrain.trendmi
 
 This is the exact same code used to generate the best submission.
 
+[Solution Documentation (in traditional Chinese)](docs/solution_documentation.md)
+
 ## Model Training and Submission Generation
 
 Potential Compatibility Issue: I use [fish shell](https://fishshell.com/). If you're using Bash, you might need to change `set -x SEED num; ` to `SEED=num `.
@@ -80,4 +82,4 @@ python avg_files.py dnn_0917_165815 dnn_0917_165829
 
 The **final submission file** (prediction to the test dataset) can be found in the project root folder with file name `sub_ens.csv`.
 
-**Note: The final model has a CV loss of 1657.81, which is slightly higher than the one of the best submission (1656.24). This is because the number of models in the 1st and 2nd layers are reduced to save training time.**
+**Note: The final model has a CV loss of 1657.81, which is slightly higher than the one of the best submission (1656.24). This is because the numbers of models in the 1st and 2nd layers are reduced to save training time.**
