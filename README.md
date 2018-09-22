@@ -10,8 +10,8 @@ This is the exact same code used to generate the best submission.
 Located inside the [notebooks](notebooks/) folder.
 
 Quick links:
- * [HTML](notebooks/EDA -  Public.html)
- * [ipynb](notebooks/EDA - Public.ipynb)
+ * [HTML](<notebooks/EDA - Public.html>)
+ * [ipynb](<notebooks/EDA - Public.ipynb>)
 
 ## Model Training and Submission Generation
 
