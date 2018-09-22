@@ -5,6 +5,14 @@ This is the exact same code used to generate the best submission.
 
 [Solution Documentation (in traditional Chinese)](docs/solution_documentation.md)
 
+## EDA (Exploratory Data Analysis) Notebook
+
+Located inside the [notebooks](notebooks/) folder.
+
+Quick links:
+ * [HTML](notebooks/EDA\ - \ Public.html)
+ * [ipynb](notebooks/EDA\ - \ Public.ipynb)
+
 ## Model Training and Submission Generation
 
 Potential Compatibility Issue: I use [fish shell](https://fishshell.com/). If you're using Bash, you might need to change `set -x SEED num; ` to `SEED=num `.
