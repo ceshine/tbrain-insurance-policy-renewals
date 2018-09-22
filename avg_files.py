@@ -1,21 +1,26 @@
 import sys
+import glob
 
 import pandas as pd
 import numpy as np
 import joblib
 from sklearn.metrics import mean_absolute_error
-MODEL_PATH = "cache/ens_2/ens_"
+MODEL_PATH = "cache/ens_2/"
 
 
 def main():
+    model_files = [
+        ".".join(x.split(".")[:-1])
+        for x in glob.glob(MODEL_PATH) if x.endswith(".pd")]
+
     val_tmp, test_tmp = [], []
     y = pd.read_csv("data/training-set.csv")["Next_Premium"].values
     df_test = pd.read_csv("data/testing-set.csv")[["Policy_Number"]]
     print("Validation")
-    for filename in sys.argv[1:]:
+    for filename in model_files:
         val_tmp.append(
             np.clip(pd.read_pickle(
-                MODEL_PATH + filename + ".pd"
+                filename + ".pd"
             ).values[:, 0], 0, 2e8)
         )
         print("%.2f %.2f %.2f %.2f %.2f" % (

@@ -99,14 +99,14 @@ def fit_and_predict(df_train, df_test,  params={}, verbose=True):
         print("Fold Val Loss: {:.2f}".format(val_losses[-1]))
     print("Val losses: {:.2f} +- {:.2f}".format(
         np.mean(val_losses), np.std(val_losses)))
-    df_val_preds = pd.concat(val_pred_dfs, axis=0).sort_index()
-    name = "lgb_simple_{}_{:.2f}".format(
-        date.today().strftime("%m%d"), np.mean(val_losses)
-    )
-    df_val_preds.to_pickle(OUT_DIR / (name + ".pd"))
-    joblib.dump(np.mean(test_preds, axis=0), OUT_DIR / (name + ".pkl"))
-    df_val_preds.to_pickle("cache/simple_val.pd")
-    joblib.dump(np.mean(test_preds, axis=0), "cache/simple_test.pkl")
+    # df_val_preds = pd.concat(val_pred_dfs, axis=0).sort_index()
+    # name = "lgb_simple_{}_{:.2f}".format(
+    #     date.today().strftime("%m%d"), np.mean(val_losses)
+    # )
+    # df_val_preds.to_pickle(OUT_DIR / (name + ".pd"))
+    # joblib.dump(np.mean(test_preds, axis=0), OUT_DIR / (name + ".pkl"))
+    # df_val_preds.to_pickle("cache/simple_val.pd")
+    # joblib.dump(np.mean(test_preds, axis=0), "cache/simple_test.pkl")
     joblib.dump(global_importance, "cache/simple_importance.pkl")
     return np.mean(val_losses)
 

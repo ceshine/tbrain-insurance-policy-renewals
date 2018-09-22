@@ -24,13 +24,10 @@ Potential Compatibility Issue: I use [fish shell](https://fishshell.com/). If yo
 set -x SEED 9989; python simple_lgb.py
 ```
 
-Then remove the validation and test predictions from this model:
-
-```
-rm cache/single/lgb_simple_*
-```
-
 #### Train LGBM Regression Models with Limited Features
+
+(The last parameter means the number of best features to be used in training)
+
 ```
 set -x SEED 11511; python truncate_lgb.py 50
 set -x SEED 13511; python truncate_lgb.py 40
@@ -42,13 +39,10 @@ set -x SEED 12511; python truncate_lgb.py 60
 set -x SEED 1989; python lgb_binary_target.py
 ```
 
-Then remove the validation and test predictions from this model:
-
-```
-rm cache/single/lgb_bin*
-```
-
 #### Train LGBM Classification Models with Limited Features
+
+(The last parameter means the number of best features to be used in training)
+
 ```
 set -x SEED 22511; python lgb_binary_truncate.py 50
 set -x SEED 23513; python lgb_binary_truncate.py 40
@@ -80,12 +74,8 @@ set -x SEED 5151; python ensemble_dnn_2nd.py
 
 ### Create Final Submission By Averaging
 
-(The command line arguments are essentially all the models inside `cache/ens_2/` folder.)
-
-You'll need to substitue *0917* in the following command to the current date:
-
 ```
-python avg_files.py dnn_0917_165815 dnn_0917_165829
+python avg_files.py
 ```
 
 The **final submission file** (prediction to the test dataset) can be found in the project root folder with file name `sub_ens.csv`.
