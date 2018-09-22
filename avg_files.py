@@ -1,11 +1,10 @@
-import sys
 import glob
 
 import pandas as pd
 import numpy as np
 import joblib
 from sklearn.metrics import mean_absolute_error
-MODEL_PATH = "cache/ens_2/"
+MODEL_PATH = "cache/ens_2/*"
 
 
 def main():
@@ -33,9 +32,9 @@ def main():
 
     print("=" * 20)
     print("Test")
-    for filename in sys.argv[1:]:
+    for filename in model_files:
         test_tmp.append(
-            np.clip(joblib.load(MODEL_PATH + filename + ".pkl"), 0, 2e8)
+            np.clip(joblib.load(filename + ".pkl"), 0, 2e8)
         )
         print("%.2f %.2f %.2f %.2f %.2f" % (
             np.min(test_tmp), np.percentile(test_tmp, 25),
