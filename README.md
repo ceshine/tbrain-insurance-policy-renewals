@@ -26,7 +26,7 @@ set -x SEED 9989; python simple_lgb.py
 
 #### Train LGBM Regression Models with Limited Features
 
-(The last parameter means the number of best features to be used in training)
+(The last parameter represents the number of best features to be used in training)
 
 ```
 set -x SEED 11511; python truncate_lgb.py 50
@@ -41,7 +41,7 @@ set -x SEED 1989; python lgb_binary_target.py
 
 #### Train LGBM Classification Models with Limited Features
 
-(The last parameter means the number of best features to be used in training)
+(The last parameter represents the number of best features to be used in training)
 
 ```
 set -x SEED 22511; python lgb_binary_truncate.py 50
